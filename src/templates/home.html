@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post" class="forms">
+  <h3><b>digai</b></h3>
+
+  <div>
+    <label for="username">username</label>
+    <input type="text" placeholder="choose a username" name="name" value="{{name}}">
+  </div>
+
+  <div class="join">
+    <input type="text" placeholder="room secret" name="code" value="{{code}}">
+    <button type="submit" name="join">join a room</button>
+  </div>
+
+  <button type="submit" name="create" class="create-btn">create a room</button>
+
+  {% if error %}
+  <ul>
+    <li>{{error}}</li>
+  </ul>
+  {% endif %}
+
+</form>
+{% endblock content %}

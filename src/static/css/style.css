@@ -1,0 +1,96 @@
+* {
+  /* background-color: rgb(128, 94, 160); */
+  font-family:monospace;
+  font-size: 1rem;
+}
+
+html {
+  background-color: rgb(128, 94, 160); /* TESTING */
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.join {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+}
+
+.create-btn {
+  width: 100%;
+}
+
+input[type="text"], textarea {
+  background-color:antiquewhite;
+}
+
+.message-box {
+  border-color: rgb(1, 12, 14);
+  border-width: 3px;
+  border-style: solid;
+  /* border-radius: 15px; */
+  background-color: rgb(221, 220, 220);
+  height: 70vh;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.messages {
+  /* background-color: rgb(221, 220, 220); TESTING */
+  overflow-y: scroll;
+  flex: 1;
+  width: 100%;
+}
+
+#message {
+  flex: 1;
+}
+
+.inputs {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+h2 {
+  text-align: center;
+}
+
+hr {
+  height: 2px;
+  width: 80%;
+  background-color: black;
+}
+
+#message {
+  flex: 1;
+}
+
+.text, span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.muted {
+  font-size: 10px;
+  color: rgb(87, 85, 85);
+}
