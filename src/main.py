@@ -10,6 +10,8 @@ socketio = SocketIO(app)
 
 ROOM_SECRET_LENGTH = 7
 
+# dictionary containing a mapping of room secrets to room contents
+# room[secret] -> { member count, messages }
 rooms = dict()
 
 
@@ -37,12 +39,12 @@ def home():
         join = request.form.get("join", False)
         create = request.form.get("create", False)
 
-        # 1. invalid/empty 'username':
+        # 1. invalid/empty 'username', display error message:
         if not name:
             return render_template(
                 "home.html", error="please enter a username", code=code, name=name
             )
-        # 2. empty 'room secret':
+        # 2. empty 'room secret', display error message:
         if join != False and not code:
             return render_template(
                 "home.html",
@@ -74,6 +76,7 @@ def home():
 @app.route("/room")
 def room():
     room = session.get("room")
+    # if room is not valid, redirect the user to the home page:
     if (room is None) or (session.get("name") is None) or (room not in rooms):
         return redirect(url_for("home"))
     return render_template("room.html", room=room, messages=rooms[room]["messages"])
