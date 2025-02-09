@@ -4,7 +4,9 @@ import random
 from string import hexdigits
 from datetime import datetime, date
 
+# create an instance of a Flask app:
 app = Flask(__name__)
+
 app.config["SECRET_KEY"] = "k@1alsdp%*^&$447HQvam2"
 socketio = SocketIO(app)
 
